@@ -20,6 +20,8 @@ public class Main {
 }
 ```
 
+<br/>
+
 ### Map이 제공하는 Method
 
 |    메서드     |                            설명                            |
@@ -32,15 +34,19 @@ public class Main {
 | containsValue |                       주어진 값 여부                       |
 |   entrySet    |           키와 값을 가진 map을 Set에 담아서 리턴           |
 
+<br/><br/>
+
 ### HashMap
 
 - Map 인터페이스를 구현한 대표적인 Map 컬렉션입니다.
 - HashMap의 키로 사용할 객체는 `hashCode()`와 `equals()` 메서드를 재정의해서 동등 객체가 될 조건을 정해야 합니다.
+  <br/><br/>
 
 ### HashTable
 
 - HashMap과 동일한 내부 구조를 가집니다.
 - 단, Hashtable은 `동기화된 메서드로 구성`되어 있기 때문에 멀티 스레드가 동시에 이 메서드들을 실행할 수 없고, 하나의 스레드가 실행을 완료해야만 다른 스레드를 실행할 수 있습니다.
+  <br/><br/>
 
 ### TreeMap
 
@@ -48,6 +54,7 @@ public class Main {
 - 키와 값이 저장된 Map.Entry를 저장합니다.
 - TreeMap에 객체를 저장하면 `자동으로 정렬`이 됩니다.
 - 부모 키값과 비교해서 낮은 것은 왼쪽 자식 노드에, 키 값이 높은 것은 오른쪽 자식 노드에 저장합니니다.
+  <br/><br/>
 
 ### 기본값을 반환하는 메서드 (1.8 ~ )
 
