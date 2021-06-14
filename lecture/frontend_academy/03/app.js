@@ -12,12 +12,24 @@ ajax.send();
 const newsFeed = JSON.parse(ajax.response);
 const ul = document.createElement('ul');
 
+// hash가 변경될 때 발생하는 이벤트
+window.addEventListener('hashchange', function () {
+  const id = location.hash.substring(1); // hash값을 가져와 #을 제외
+  ajax.open('GET', CONTENT_URL.replace('@id', id), false);
+  ajax.send();
+
+  const newsContent = JSON.parse(ajax.response);
+  console.log(newsContent);
+});
+
 for (let i = 0; i < 10; i++) {
   const li = document.createElement('li');
   const a = document.createElement('a');
 
-  a.href = '#';
+  a.href = `#${newsFeed[i].id}`;
   a.innerHTML = `${newsFeed[i].title} (${newsFeed[i].comments_count})`;
+
+  a.addEventListener('click', function () {});
 
   li.appendChild(a);
   ul.appendChild(li);
