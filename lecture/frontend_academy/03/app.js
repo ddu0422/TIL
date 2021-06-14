@@ -1,6 +1,7 @@
 // let, const 차이
 // let은 데이터 변경 가능, const는 데이터 변경 불가 (상수라고 부른다.)
 
+const container = document.getElementById('root');
 const ajax = new XMLHttpRequest();
 const content = document.createElement('div');
 const NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
@@ -39,5 +40,5 @@ for (let i = 0; i < 10; i++) {
   ul.appendChild(li);
 }
 
-document.getElementById('root').appendChild(ul);
-document.getElementById('root').appendChild(content);
+container.appendChild(ul);
+container.appendChild(content);
