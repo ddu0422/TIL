@@ -2,6 +2,7 @@
 // let은 데이터 변경 가능, const는 데이터 변경 불가 (상수라고 부른다.)
 
 const ajax = new XMLHttpRequest();
+const content = document.createElement('div');
 const NEWS_URL = 'https://api.hnpwa.com/v0/news/1.json';
 const CONTENT_URL = 'https://api.hnpwa.com/v0/item/@id.json';
 
@@ -19,7 +20,10 @@ window.addEventListener('hashchange', function () {
   ajax.send();
 
   const newsContent = JSON.parse(ajax.response);
-  console.log(newsContent);
+  const title = document.createElement('h1');
+
+  title.innerHTML = newsContent.title;
+  content.appendChild(title);
 });
 
 for (let i = 0; i < 10; i++) {
@@ -36,3 +40,4 @@ for (let i = 0; i < 10; i++) {
 }
 
 document.getElementById('root').appendChild(ul);
+document.getElementById('root').appendChild(content);
